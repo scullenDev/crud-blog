@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/styles.css" />
+    <title>Full-Stack CRUD Blog</title>
+  </head>
+  <body id="add">
+    <header>
+      <div class="container">
+        <h1><a href="/">Full-Stack CRUD Blog</a></h1>
+        <ul>
+          <li><a href="/">View Posts</a></li>
+          <li><a href="/add">Add Post</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="container">
+      <div>
+        <section class="form">
+          <h2>Add a New Post:</h2>
+          <form id="addPost">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" placeholder="Post Title Here" />
+            <label for="text">Text:</label>
+            <textarea name="text" id="text" placeholder="Post Text Here"></textarea>
+            <label for="categories">Choose Category:</label>
+            <select name="categories" id="categories"></select>
+            <button type="submit">Add Post</button>
+          </form>
+        </section>
+        <section class="sidebar">
+          <h2>Add a Category:</h2>
+          <form id="addCategory">
+            <label for="category">Category Name:</label>
+            <input type="text" id="category" placeholder="Category Name" />
+            <button type="submit">Add Category</button>
+          </form>
+        </section>
+      </div>
+    </div>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/add.js"></script>
+  </body>
+</html>
