@@ -30,8 +30,6 @@ document.querySelector('.delete').addEventListener('click', () => {
     .catch((err) => console.log(err));
 });
 
-getCategories();
-
 fetch(`/api/posts/${id}`)
   .then((res) => res.json())
   .then(({ title, text, CategoryId }) => {

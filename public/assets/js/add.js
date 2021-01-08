@@ -16,4 +16,3 @@ document.getElementById('addPost').addEventListener('submit', (e) => {
 });
 
 document.getElementById('title').focus();
-getCategories();

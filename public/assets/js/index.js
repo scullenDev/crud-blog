@@ -37,4 +37,3 @@ document.getElementById('viewCategory').addEventListener('submit', (e) => {
 });
 
 getPosts();
-getCategories();

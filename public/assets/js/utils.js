@@ -38,3 +38,5 @@ document.getElementById('addCategory').addEventListener('submit', (e) => {
     .then(() => getCategories())
     .catch((err) => console.log(err));
 });
+
+getCategories();

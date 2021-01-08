@@ -1,3 +1,4 @@
+const { Op } = require('sequelize')
 const { Category, Post } = require('../models');
 
 module.exports = {
@@ -5,6 +6,19 @@ module.exports = {
     Post.findAll({
       include: [Category],
       where: req.query,
+    })
+      .then((posts) => res.json(posts))
+      .catch((err) => res.status(500).json(err));
+  },
+  search: (req, res) => {
+    // this line pulls the search term from the request url; ie '?query=searchTermHere'
+    const { query } = req.query;
+    Post.findAll({
+      include: [Category],
+      where: {
+        // then, we use the Sequelize 'or' and 'substring' operators to query for the search term specified as a substring inside two different columns
+        [Op.or]: [{ title: { [Op.substring]: query } }, { text: { [Op.substring]: query } }]
+      },
     })
       .then((posts) => res.json(posts))
       .catch((err) => res.status(500).json(err));
