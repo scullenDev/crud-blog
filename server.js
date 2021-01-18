@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const { sequelize } = require('./models');
 const logger = require('morgan');
@@ -12,7 +13,7 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use(routes);
 
-sequelize.sync().then(() => {
+sequelize.sync({ force: process.env.DB_FORCE || false }).then(() => {
   app.listen(PORT, () => {
     console.log(`Server now listening on 'http://localhost:${PORT}'!`);
   });
