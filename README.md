@@ -23,7 +23,7 @@ The steps below will talk you through the steps necessary for repository collabo
 
 1. Install the `dotenv` npm package in the directory that contains your server `package.json`.
 
-2. Add the following line to the top of your server file: `require('dotenv').require()`. *Note: this line must be above the import of your Sequelize models directory).*
+2. Add the following line to the top of your server file: `require('dotenv').config()`. *Note: this line must be above the import of your Sequelize models directory).*
 
 3. Within your `config` folder, create a new file named `config.js`. In this file, `module.export` the Sequelize configuration object from within your current `config/config.json`. Replace your custom database connection settings (username, password, database, port, etc) as follows, taking note of the specified values:
 
